@@ -1,0 +1,331 @@
+/* Base Styles */
+:root {
+    --primary-color: #3498db; /* Bleu */
+    --secondary-color: #2c3e50; /* Gris foncé */
+    --text-color: #333;
+    --light-grey: #f4f4f4;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--light-grey);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header / Hero Section */
+.hero-section {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 60px 0 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    margin: 10px 0;
+    font-size: 2.8em;
+    color: var(--primary-color);
+}
+
+.hero-section .tagline {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour les petits écrans */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* General Card Styling */
+.card {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* About Section */
+.social-links {
+    margin-top: 20px;
+    text-align: center; /* Centrer les icônes */
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Experience & Education */
+.job-entry, .education-entry {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--light-grey);
+}
+
+.job-entry:last-child, .education-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job-entry h3, .education-entry h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.job-entry .dates, .education-entry .dates {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    display: block; /* S'assurer qu'il prend toute la largeur */
+}
+
+.job-entry ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.job-entry li {
+    margin-bottom: 8px;
+}
+
+/* Skills Section */
+.skills-category {
+    margin-bottom: 25px;
+}
+
+.skills-category h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espace entre les éléments */
+}
+
+.skill-list li {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    font-size: 0.95em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    border: 1px solid #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item h3 {
+    margin: 15px 15px 5px;
+    font-size: 1.3em;
+}
+
+.portfolio-item h3 a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.portfolio-item h3 a:hover {
+    color: var(--primary-color);
+}
+
+.portfolio-item p {
+    margin: 0 15px 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Contact Section */
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px); /* Ajuster pour le padding */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #2980b9; /* Un peu plus foncé */
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section .tagline {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.8em;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
