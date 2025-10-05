@@ -1,0 +1,334 @@
+/* style.css */
+
+/* Base Styles */
+:root {
+    --primary-color: #3498db; /* Blue */
+    --secondary-color: #2c3e50; /* Dark Gray */
+    --text-color: #333;
+    --light-grey: #f4f4f4;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--light-grey);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- Cover Photo Section --- */
+.cover-photo-wrapper {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Ensure cover is behind hero section */
+}
+
+.cover-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* --------------------------- */
+
+
+/* Header / Hero Section */
+.hero-section {
+    background: var(--secondary-color);
+    color: #fff;
+    padding-top: 100px; /* Added padding-top to create space for the profile picture */
+    padding-bottom: 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    margin-top: -100px; /* Pull hero section up to overlap cover photo */
+    position: relative; /* Essential for positioning children absolutely */
+    z-index: 2; /* Ensures hero section is above cover photo */
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    /* Position the profile picture absolutely over the cover photo and hero section */
+    position: absolute; /* Changed to absolute positioning */
+    top: -75px; /* Half of profile picture height above the hero section's top border */
+    left: 50%;
+    transform: translateX(-50%); /* Centering horizontally */
+    z-index: 3; /* Ensures profile picture is on top */
+}
+
+
+.hero-section h1 {
+    margin: 10px 0;
+    font-size: 2.8em;
+    color: var(--primary-color);
+}
+
+.hero-section .tagline {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* General Card Styling */
+.card {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Professional Profile Section */
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Experience & Education */
+.job-entry, .education-entry {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--light-grey);
+}
+
+.job-entry:last-of-type, .education-entry:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job-entry h3, .education-entry h3, .job-entry h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.job-entry h4 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: var(--secondary-color);
+}
+
+
+.job-entry .dates, .education-entry .dates {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.job-entry ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.job-entry li {
+    margin-bottom: 8px;
+}
+
+/* Core Competencies Section */
+.skills-category {
+    margin-bottom: 25px;
+}
+
+.skills-category h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list li {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    font-size: 0.95em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+/* Contact Form Styling */
+.contact-form {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for the form area */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block; /* Make labels appear above inputs */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Full width */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-family: 'Roboto', sans-serif; /* Match overall font */
+    font-size: 16px;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Light blue shadow on focus */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px; /* Minimum height for textarea */
+}
+
+.btn-submit {
+    display: inline-block; /* Allows padding and margin */
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cover-photo-wrapper {
+        height: 200px;
+    }
+    .hero-section {
+        margin-top: -50px;
+        padding-top: 75px; /* Adjust padding-top for mobile */
+    }
+    .profile-picture {
+        top: -50px; /* Adjust for mobile, half of 100px profile pic */
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section .tagline {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.8em;
+    }
+}
